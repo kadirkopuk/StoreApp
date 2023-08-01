@@ -1,4 +1,4 @@
-@model List<StoreApp.Models.Product>
+@model List<Product>
 
 @section Footer {
     <div>
@@ -6,15 +6,8 @@
     </div>
 }
 
-
-    @foreach (StoreApp.Models.Product prd in Model)
+    @foreach (Product prd in Model)
     {
-        <div>
-            <h3>@prd.ProductName</h3>
-            <P>@prd.Price</P>
-            <p>
-                <a href="/Product/Get/@prd.ProductId">Get Details</a>
-            </p>
-        </div>
+        <partial name="_ProductCard" model="@prd" />
     }
  
